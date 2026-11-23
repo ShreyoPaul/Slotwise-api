@@ -151,7 +151,7 @@ class AppointmentIntegrationTest {
     void shouldAllowBookingSameSlotAfterPreviousAppointmentIsCancelled() throws Exception {
         Provider provider = createProvider();
 
-        LocalDateTime start = LocalDateTime.now().plusDays(3);
+        LocalDateTime start = LocalDateTime.now().plusDays(3).withNano(0);
         LocalDateTime end = start.plusHours(1);
 
         Appointment existing = createAppointment(provider, start, end);
